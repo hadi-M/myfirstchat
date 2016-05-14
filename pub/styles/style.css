@@ -1,0 +1,425 @@
+@font-face {
+	font-family: Roboto;
+	src: url("../fonts/RobotoCondensed-Regular.ttf");
+}
+@font-face {
+	font-family: Ubuntu_B;
+	src: url("../fonts/UbuntuMono-B.ttf");
+}
+@font-face {
+	font-family: Ubuntu_R;
+	src: url("../fonts/UbuntuMono-R.ttf");
+}
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	background-image: url("../imgs/background.png");
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#IP_box {
+	width: 600px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transform: translateY(-50%);
+	border-radius: 2px;
+	background-color: #fff;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#IP_box.closed {
+	top: -50%;
+}
+
+#IP_box header{
+	font-family: Roboto;
+	font-size: 35px;
+	color: #477EA9;
+	height: 90px;
+	/*background-color: #fff;*/
+	line-height: 90px;
+	text-align: center;
+}
+
+#IP_box section {
+	top: -1px;/*
+	position: */relative;
+	height: 380px;
+}
+
+#IP_box form {
+	padding: 50px;
+	/*background-color: #fff;*/
+}
+
+#IP_box form input {
+	width: 400px;
+	height: 70px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 4px solid #AAA;
+	-webkit-transition: border-color top 0.1s linear;
+	-o-transition: border-color 0.1s linear;
+	transition: border-color 0.1s linear;
+}
+
+textarea:focus, input:focus, #IP_box form button{
+	outline: none;
+}
+
+#IP_box form input:hover, #IP_box form input:focus {
+	border-color: #7287B8;
+}
+
+#IP_box form button {
+	margin-top: 60px;
+	background-color: #fff;
+	width: 80px;
+	height: 50px;
+	border-radius: 3px;
+	border: 3px solid #5274C4;
+
+	color: #5274C4;
+
+	cursor: pointer;
+	-webkit-transition: color, background-color 0.1s linear;
+}
+
+#IP_box form button:hover {
+	background-color: #5274C4;
+	color: #FFF;
+}
+
+#IP_box form input, button {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	font-size: 25px;
+}
+
+#modal_hldr {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(50, 50, 50, 0.5);
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	display: none;
+}
+
+#ID_modal, #list_modal, #chat_request, #already_exist, #doesnt_exist, #already_blocked, #wasnt_blocked, #chat_declined, #chat_yourself, #what {
+	position: fixed;
+	width: 400px;
+	height: 220px; 
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	background-color: #fff;
+	text-align: center;
+	font-family: Roboto;
+	font-size: 25px;
+	padding: 20px;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	display: none;
+}
+
+div#what button {
+	width: 115px;
+}
+
+#ID_modal p{
+	margin: 10px 0 0 0;
+}
+
+#modal_hldr button {
+	margin-top: 30px;
+	display: inline-block;
+	background-color: #fff;
+	width: 80px;
+	height: 50px;
+	border-radius: 3px;
+	border: 3px solid #5274C4;
+	color: #5274C4;
+	cursor: pointer;
+	-webkit-transition: color, background-color 0.1s linear;
+}
+
+#modal_hldr button:hover {
+	background-color: #5274C4;
+	color: #FFF;
+}
+
+#user_intercation {
+	position: absolute;
+	width: 700px;
+	height: 800px;
+	top: 0;
+	bottom: -200%;
+	right: 0;
+	left: 0;
+	margin: auto;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#user_intercation.shown {
+	bottom: 0;
+}
+
+.chat_hldr {
+	width: 100%;
+	height: 650px;
+}
+
+.chat_box_hldr {
+	height: 100%;
+	width: 75%;
+	display: inline-block;
+}
+
+.user_box {
+	width: 25%;
+	height: 100%;
+	background-color: #fff;
+	display: inline-block;
+	float: left;
+	overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(50,50,50,0.5); 
+	border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 1px;
+	-webkit-box-shadow: inset 0 0 6px rgba(168, 218,255,1); 
+}
+
+.chat_box_hldr {
+	width: 75%;
+}
+
+.chat_box {
+	width: 100%;
+	height: 100%;
+	background-color: #abc;
+	display: inline-block;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.chat_sender {
+	position: absolute;
+	bottom: 158px;
+	left: 163px;
+	right: 0;
+	text-align: center;
+	display: none;
+}
+
+.chat_sender input {
+	display: inline-block;
+	border: none;
+	width: 450px;
+	height: 50px;
+	vertical-align: middle;
+	font-size: 30px;
+	padding-left: 10px;
+	background-color: #EEE;
+}
+
+.chat_sender button {
+	width: 50px;
+	height: 50px;
+	margin: 0;
+	display: inline-block;
+	border: none;
+	vertical-align: middle;
+	color: #FFF;
+	background-color: #8fc9e5;
+	cursor: pointer;
+}
+
+.clearfix:after { 
+	content: "."; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+
+.users {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.users li {
+	width: 100%;
+	height: 70px;
+	position: relative;
+	margin: 0;
+}
+
+.users li.blocked {
+	background-color: #FF8C8C;
+}
+
+.users li.selected {
+	background-color: #DDD;
+}
+
+.users li div {
+	font-family: Roboto;
+	line-height: 50px;
+	color: #555;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border-radius: 50%;
+	background-color: #cda;
+	cursor: pointer;
+}
+
+.pm {
+	font-family: Roboto;
+}
+
+.pm_text {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.pm_text > div {
+	margin: 10px;
+}
+
+.pm_text .name-hldr {
+	width: 10%;
+	display: inline-block;
+}
+
+.pm_text .name {
+	width: 40px;
+	height: 40px;
+	border: 4px solid #FFF;
+	border-radius: 50%;
+	background-color: #E15F5F;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 34px;
+}
+
+.pm .yours .name-hldr {
+	float: left;
+}
+
+.pm .his .name-hldr {
+	float: right;
+}
+
+.pm .yours .text {
+	float: right;
+}
+
+.pm .his .text {
+	float: left;
+}
+
+.pm_text .text{
+	padding: 10px 15px 10px 15px;
+	min-height: 50px;
+	display: inline-block;
+	width: 88%;
+	background-color: #fff;
+	position: relative;
+	border-radius: 2px;
+}
+
+.pm_text .text::before {
+	top: 13px;
+	content: "";
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	transform: rotate(45deg);
+	background-color: black;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.pm .yours .text::before {
+	left: -3px;
+}
+
+.pm .his .text::before {
+	right: -3px;
+}
+
+#terminal {
+	position: absolute;
+	width: 100%;
+	height: 75px;
+	background-color: #333;
+	border-radius: 5px;
+	bottom: 0;
+	font-family: Ubuntu_R;
+	padding: 10px;
+	font-size: 30px;
+	color: #FFF;
+	vertical-align: middle;
+}
+
+#terminal div {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#terminal form {
+	display: inline-block;
+}
+
+#terminal input {
+	border: none;
+	height: 30px;
+	background-color: #333;
+	color: #FFF;
+	vertical-align: middle;
+	font-size: 30px;
+	width: 570px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat app - Farzin Soleymani</title>
+	<link rel="stylesheet" href="pub/styles/style.css">
+	<link rel="stylesheet" href="pub/styles/font_awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="IP_box" class="loading">
+		<header>
+			<span>Enter the server's IP and Port Plz :D</span>
+		</header>
+		<section>
+			<form action="#">
+				<input id="ip" type="text" placeholder="IP (Default: 127.0.0.1)">
+				<input id="port" type="text" placeholder="Port">
+				<button>Go!</button>
+			</form>
+		</section>
+	</div>
+	<div id="user_intercation">
+
+		<div class="chat_hldr">
+			<div class="user_box">
+				<ul class="users">
+					
+				</ul>
+			</div><!--
+		--><div class="chat_box_hldr"><!--
+	--><div class="chat_box">
+	<div class="pm">
+		
+	</div>
+
+</div>
+</div>
+</div>
+<div id="terminal">
+	<div>
+		<span id="terminal_ID"></span><form action=""><input type="text" placeholder="Enter commad"></form>
+	</div>
+</div>
+<form id="sender" action="" class="chat_sender">
+	<input type="text"><button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+</form>
+</div>
+<div id="modal_hldr">
+	<div id="ID_modal">
+		<p>Your ID is: "ID<span></span>"</p>
+		<button>OK</button>
+	</div>
+	<div id="list_modal">
+		<p>The connected ID's are :<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="chat_declined">
+		<p>The other guy turned you down :D<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="chat_yourself">
+		<p>you can't connect to yourself :)<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="what">
+		<p>WHAT?!<span></span></p>
+		<button>Sorry :P</button>
+	</div>
+	<div id="already_exist">
+		<p>This chat already exists!<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="doesnt_exist">
+		<p>This doesn't exist!<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="already_blocked">
+		<p>This ID is already blocked! :P<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="wasnt_blocked">
+		<p>This ID wasn't blocked<span></span></p>
+		<button>OK</button>
+	</div>
+	<div id="chat_request">
+		<p>ID<span></span> wants to chat, accept?</p>
+		<button class="yep" >Yep</button>
+		<button class="nope" >Nope</button>
+	</div>
+</div>
+
+
+<script src="pub/scripts/jquery-2.2.3.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>            
+<script src="pub/scripts/script.js"></script>
+</body>
+</html>

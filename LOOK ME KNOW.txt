@@ -1,0 +1,11 @@
+Hey :)
+first of all i've did this project with nodejs sockets for having a better experience. because of the html and css you know.
+so first of all install the node js.
+then cd to this directory and do a "npm install"
+then do a "node app.js <port>" and port is the... you know :D
+like: node app.js 12345
+then using your browser (please not IE, and please use Chrome) visit the page, for instance "http://127.0.0.1:12345".
+and enjoy :D
+and the IDs formats are line "ID*" for example to connect, use this command on the little black terminal in the page "Connect ID1"
+and one last thing, the reason of my delay was that i was doing my project using python, and so the UI would have been the cli, and if that was the case, it would suck you know?
+so right in the middle of the project i changed my way to node js and so as you can see, i did the UI using html, css3, and js. which got to be pretty cool :D
